@@ -1,4 +1,4 @@
-    // Set year
+// Set year
     document.getElementById('year').textContent = new Date().getFullYear();
 
     // Hamburger menu functionality
