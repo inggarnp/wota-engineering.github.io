@@ -7,9 +7,10 @@
   <link rel="icon" href="img/PP.png" type="image/png">
 
   <!-- Fonts & icons -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&family=Bebas+Neue&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
+  <!-- NEW RESPONSIVE CSS -->
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
@@ -17,7 +18,8 @@
   <!-- NAV -->
   <nav id="navbar" aria-label="Main Navigation">
     <div class="nav-inner">
-      <div class="brand" aria-hidden="false">
+
+      <div class="brand">
         <img src="img/PP.png" alt="Wota Engineering logo">
         <h1>Wota Engineering</h1>
       </div>
@@ -29,26 +31,23 @@
         <a href="#others">Others</a>
       </div>
 
-      <!-- Hamburger Menu -->
-      <div class="hamburger" id="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
+      <!-- HAMBURGER MOBILE -->
+      <button id="hamburger" aria-label="Toggle menu" class="hamburger-btn">☰</button>
+
+      <!-- MOBILE MENU -->
+      <div id="mobileMenu" class="mobile-menu">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#products">Products</a>
+        <a href="#others">Others</a>
       </div>
+
     </div>
   </nav>
 
-  <!-- Mobile Menu -->
-  <div class="mobile-menu" id="mobileMenu">
-    <a href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#products">Products</a>
-    <a href="#others">Others</a>
-  </div>
-
 <!-- HERO -->
 <header class="hero" id="home" role="banner">
-  
+
   <div class="hero-left">
     <h2 class="hero-welcome">Welcome!</h2>
     <h1 class="hero-title-big">Wota Engineering<br>Official</h1>
@@ -67,13 +66,11 @@
 
     <!-- ABOUT -->
     <section id="about" class="about-section">
-      
-      <!-- LEFT IMAGE -->
+
       <div class="about-image">
         <img src="img/NO BG.png" alt="Tentang Kita">
       </div>
 
-      <!-- RIGHT TEXT -->
       <div class="about-text">
         <h1>Tentang Kita</h1>
         <p>
@@ -92,9 +89,19 @@
     <!-- PRODUCT GALLERY -->
     <section id="products" class="product-gallery">
       <h2 class="gallery-title">Merch & Bundling</h2>
-      
+
       <div class="gallery-container">
-        <!-- Product Cards -->
+
+        <!-- Navigation Buttons -->
+        <div class="nav-btn" id="prevBtn">
+          <i class="fas fa-chevron-left"></i>
+        </div>
+        <div class="nav-btn" id="nextBtn">
+          <i class="fas fa-chevron-right"></i>
+        </div>
+
+        <!-- PRODUCT CARDS (ASLI, TANPA DIUBAH) -->
+
         <div class="product-card active" data-id="1">
           <div class="product-media">
             <img src="img/T-Shirt.png" alt="T-Shirt WEO" />
@@ -185,20 +192,12 @@
             </div>
           </div>
         </div>
-      </div>
 
-      <!-- Navigation Buttons -->
-      <div class="gallery-nav">
-        <div class="nav-btn" id="prevBtn">
-          <i class="fas fa-chevron-left"></i>
-        </div>
-        <div class="nav-btn" id="nextBtn">
-          <i class="fas fa-chevron-right"></i>
-        </div>
       </div>
 
       <!-- Indicators -->
       <div class="product-indicators" id="indicators"></div>
+
     </section>
 
     <!-- OTHERS -->
@@ -207,11 +206,11 @@
       <div class="others">
         <p class="muted">Yuk gabung diskusi, ikut event, dan follow update limited drops dari Wota Engineering.</p>
 
-        <div class="socials" role="navigation" aria-label="social links">
-          <a href="https://www.tiktok.com/@wota.engineering?is_from_webapp=1&sender_device=pc" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
-          <a href="https://www.instagram.com/wota_engineering?igsh=MWg1b3czNm8xbGh6Nw==" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-          <a href="#" aria-label="Discord"><i class="fab fa-discord"></i></a>
-          <a href="https://x.com/WotaEngineering?t=epVE7_TsyRWe_XD66Mq6MQ&s=09" aria-label="X/Twitter"><i class="fab fa-x-twitter"></i></a>
+        <div class="socials">
+          <a href="#"><i class="fab fa-tiktok"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-discord"></i></a>
+          <a href="#"><i class="fab fa-x-twitter"></i></a>
         </div>
       </div>
     </section>
@@ -219,6 +218,7 @@
     <footer style="margin-top:34px;">
       <small>© <span id="year"></span> Wota Engineering Official</small>
     </footer>
+
   </main>
 
 <script src="assets/js/script.js"></script>
