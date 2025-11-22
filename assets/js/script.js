@@ -7,7 +7,6 @@ const mobileMenu = document.getElementById('mobileMenu');
 const mobileMenuLinks = document.querySelectorAll('.mobile-menu a');
 
 hamburger.addEventListener('click', () => {
-  hamburger.classList.toggle('active');
   // toggle via inline style for compatibility
   if (mobileMenu.style.display === 'block') {
     mobileMenu.style.display = 'none';
@@ -19,7 +18,6 @@ hamburger.addEventListener('click', () => {
 // Close mobile menu when link is clicked
 mobileMenuLinks.forEach(link => {
   link.addEventListener('click', () => {
-    hamburger.classList.remove('active');
     mobileMenu.style.display = 'none';
   });
 });
@@ -34,7 +32,6 @@ links.forEach(a => {
     // close mobile menu on link click (if open)
     if (mobileMenu.style.display === 'block') {
       mobileMenu.style.display = 'none';
-      hamburger.classList.remove('active');
     }
   });
 });
@@ -68,7 +65,7 @@ window.addEventListener('scroll', () => {
     navbar.classList.remove('hidden');
   }
 
-  lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For Mobile or negative scrolling
+  lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
 }, { passive: true });
 
 // Product Gallery
@@ -155,7 +152,7 @@ document.addEventListener('keydown', (e) => {
   if (e.key === 'ArrowLeft') prevSlide();
 });
 
-// Auto-rotate with performance optimization
+// Auto-rotate
 let autoRotateInterval;
 let isAutoRotating = true;
 
@@ -213,21 +210,3 @@ function handleSwipe() {
     prevSlide();
   }
 }
-
-// close on Esc (no modal, keep handler minimal)
-document.addEventListener('keydown', (e) => {
-  // placeholder if future handlers needed
-});
-
-// Keep btn-detail listeners safe (no modal)
-document.querySelectorAll('.btn-detail').forEach(btn => {
-  btn.addEventListener('click', (e) => {
-    e.stopPropagation();
-    const card = btn.closest('.product-card');
-    const title = card.querySelector('h3').textContent;
-    const img = card.querySelector('img').src;
-    const desc = (card.querySelector('p')) ? card.querySelector('p').textContent : '';
-    // No modal: we could open checkout directly or navigate
-    // If you want behavior here, tell me and I'll wire it (e.g., open form link)
-  });
-});
